@@ -22,8 +22,8 @@ opt.splitbelow = true
 opt.ignorecase = true --search
 opt.smartcase = true
 
-opt.cmdheight = 0
-opt.showmode = false
+opt.cmdheight = 1
+opt.showmode = true
 opt.laststatus = 3
 
 -- opt.fillchars = "vert: ,horiz: "
