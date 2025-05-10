@@ -21,6 +21,7 @@ return
                     hex_color = hipatterns.gen_highlighter.hex_color(),
                 },
             })
+
             -- local minitabline_config = {
             --     show_icons = true,
             --     format = function (buf_id, label)
@@ -29,6 +30,7 @@ return
             --     end
             -- }
             -- require 'mini.tabline'.setup(minitabline_config)
+            --
             local splitjoin_config = {
                 detect = {
                     separator = '[,;]',
