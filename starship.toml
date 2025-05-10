@@ -1,0 +1,52 @@
+format = """
+$directory$git_branch$git_status$rust$python$golang$lua$cmd_duration$time
+$character
+"""
+
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[✗](bold red)"
+
+[directory]
+style = "bold green"
+truncate_to_repo = false
+truncation_length = 0
+truncation_symbol = '…/'
+
+[git_branch]
+format = "[$symbol$branch]($style) "
+symbol = " "
+style = "bold purple"
+
+[git_status]
+style = "bold red"
+format = "([$all_status]($style))"
+
+[cmd_duration]
+style = "bold yellow"
+min_time = 500
+
+[time]
+disabled = false
+format = "[$time]($style) "
+style = "bold cyan"
+
+[username]
+show_always = true
+style_user = "bold blue"
+
+[hostname]
+style = "bold pink"
+
+[rust]
+format = "[$symbol$version]($style) "
+
+[python]
+format = "[$symbol$version]($style) "
+
+[golang]
+format = "[$symbol$version]($style) "
+
+[lua]
+format = "[$symbol$version]($style) "
+

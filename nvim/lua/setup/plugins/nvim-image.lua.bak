@@ -1,0 +1,14 @@
+return
+{
+	"3rd/image.nvim",
+	config = function()
+		require("image").setup()
+		package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?/init.lua"
+		package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?.lua"
+	end,
+}
+-- if error occurs on MacOS
+--image.nvim: magick rock not found, please install it and restart your editor
+--error: loop or previous error loading module 'magick'
+--solution:
+--brew install pkg-config
