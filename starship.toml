@@ -1,0 +1,78 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+right_format = """
+$cmd_duration
+$time
+"""
+add_newline = true
+
+palette = "nord"
+
+[palettes.nord]
+nord0 = "#2E3440"
+nord1 = "#3B4252"
+nord2 = "#434C5E"
+nord3 = "#4C566A"
+nord4 = "#D8DEE9"
+nord5 = "#E5E9F0"
+nord6 = "#ECEFF4"
+nord7 = "#8FBCBB"
+nord8 = "#88C0D0"
+nord9 = "#81A1C1"
+nord10 = "#5E81AC"
+nord11 = "#BF616A"
+nord12 = "#D08770"
+nord13 = "#EBCB8B"
+nord14 = "#A3BE8C"
+nord15 = "#B48EAD"
+
+[package]
+disabled = true
+
+[character]
+success_symbol = '[➜](bold nord14)'
+error_symbol = '[✗](bold nord11)'
+
+[directory]
+style = "bold nord8"
+truncate_to_repo = false
+truncation_length = 0
+truncation_symbol = '…/'
+
+[git_branch]
+format = ' [$symbol$branch(:$remote_branch)]($style) '
+style = "bold nord9"
+
+[git_status]
+style = "bold nord15"
+
+[cmd_duration]
+format = " [$duration]($style)"
+min_time = 500
+style = "bold nord10"
+
+[time]
+disabled = false
+format = ' [$time]($style) '
+style = "bold nord7"
+
+[username]
+show_always = true
+format = "[$user]($style) "
+style_user = "bold nord4"
+
+[hostname]
+style = "bold nord5"
+
+[rust]
+format = " [$symbol($version )]($style)"
+
+[python]
+format = " [$symbol($version )]($style)"
+
+[golang]
+format = " [$symbol($version )]($style)"
+
+[lua]
+format = " [$symbol($version )]($style)"
+

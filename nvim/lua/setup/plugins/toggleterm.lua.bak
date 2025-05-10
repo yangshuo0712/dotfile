@@ -1,0 +1,34 @@
+return {
+    'akinsho/toggleterm.nvim',
+    version = "*",
+    opts = {
+        direction = 'vertical',
+        size = function(term)
+            if term.direction == 'horizontal' then
+                return 15
+            elseif term.direction == 'vertical' then
+                return math.floor(vim.o.columns * 0.5)
+            end
+        end,
+        start_in_insert = true,
+        open_mapping = [[<c-\>]],
+        -- #303447
+        winbar = {
+            enabled = true,
+            name_formatter = function(term) --  term: Terminal
+                return term.name
+            end
+        },
+        highlights = {
+            Normal = {
+                link = 'Normal',
+            },
+            WinBar = {
+                link = 'Normal',
+            },
+            WinBarNC = {
+                link = 'Normal',
+            },
+        },
+    },
+}

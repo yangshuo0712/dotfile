@@ -1,0 +1,36 @@
+gui:
+  language: "en"
+  nerdFontsVersion: "3"
+  border: "rounded"
+  showFileTree: true
+  showCommandLog: true
+  commandLogSize: 8
+  showBottomLine: false
+  showListFooter: true
+  showPanelJumps: true
+  mouseEvents: false
+  theme:
+    activeBorderColor:
+      - "#88C0D0" # nord10
+      - bold
+    inactiveBorderColor:
+      - "#4C566A" # nord3
+    optionsTextColor:
+      - "#81A1C1" # nord9
+    selectedLineBgColor:
+      - "#3B4252" # nord1
+    selectedRangeBgColor:
+      - "#434C5E" # nord2
+    cherryPickedCommitBgColor:
+      - "#5E81AC" # nord10
+    cherryPickedCommitFgColor:
+      - "#E5E9F0" # nord4
+    unstagedChangesColor:
+      - "#BF616A" # nord11
+    defaultFgColor:
+      - default
+
+git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never

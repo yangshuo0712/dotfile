@@ -1,0 +1,4 @@
+[general]
+theme = 'dark'
+[manager]
+show_hidden = true
