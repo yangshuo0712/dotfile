@@ -1,14 +1,34 @@
+palette = "nord"
+
+[palettes.nord]
+nord0 = "#2E3440"
+nord1 = "#3B4252"
+nord2 = "#434C5E"
+nord3 = "#4C566A"
+nord4 = "#D8DEE9"
+nord5 = "#E5E9F0"
+nord6 = "#ECEFF4"
+nord7 = "#8FBCBB"
+nord8 = "#88C0D0"
+nord9 = "#81A1C1"
+nord10 = "#5E81AC"
+nord11 = "#BF616A"
+nord12 = "#D08770"
+nord13 = "#EBCB8B"
+nord14 = "#A3BE8C"
+nord15 = "#B48EAD"
+
 format = """
 $directory$git_branch$git_status$rust$python$golang$lua$cmd_duration$time
 $character
 """
 
 [character]
-success_symbol = "[➜](bold green)"
-error_symbol = "[✗](bold red)"
+success_symbol = "[➜](bold nord14)"
+error_symbol = "[✗](bold nord11)"
 
 [directory]
-style = "bold green"
+style = "bold nord8"
 truncate_to_repo = false
 truncation_length = 0
 truncation_symbol = '…/'
@@ -16,37 +36,41 @@ truncation_symbol = '…/'
 [git_branch]
 format = "[$symbol$branch]($style) "
 symbol = " "
-style = "bold purple"
+style = "bold nord9"
 
 [git_status]
-style = "bold red"
+style = "bold nord11"
 format = "([$all_status]($style))"
 
 [cmd_duration]
-style = "bold yellow"
+style = "bold nord13"
 min_time = 500
 
 [time]
 disabled = false
 format = "[$time]($style) "
-style = "bold cyan"
+style = "bold nord7"
 
 [username]
 show_always = true
-style_user = "bold blue"
+style_user = "bold nord4"
 
 [hostname]
-style = "bold pink"
+style = "bold nord5"
 
 [rust]
 format = "[$symbol$version]($style) "
+style = "bold nord14"
 
 [python]
 format = "[$symbol$version]($style) "
+style = "bold nord14"
 
 [golang]
 format = "[$symbol$version]($style) "
+style = "bold nord14"
 
 [lua]
 format = "[$symbol$version]($style) "
+style = "bold nord14"
 
