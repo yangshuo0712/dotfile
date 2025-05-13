@@ -1,3 +1,11 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+right_format = """
+$cmd_duration
+$time
+"""
+add_newline = true
+
 palette = "nord"
 
 [palettes.nord]
@@ -18,14 +26,12 @@ nord13 = "#EBCB8B"
 nord14 = "#A3BE8C"
 nord15 = "#B48EAD"
 
-format = """
-$directory$git_branch$git_status$rust$python$golang$lua$cmd_duration$time
-$character
-"""
+[package]
+disabled = true
 
 [character]
-success_symbol = "[➜](bold nord14)"
-error_symbol = "[✗](bold nord11)"
+success_symbol = '[➜](bold nord14)'
+error_symbol = '[✗](bold nord11)'
 
 [directory]
 style = "bold nord8"
@@ -34,43 +40,43 @@ truncation_length = 0
 truncation_symbol = '…/'
 
 [git_branch]
-format = "[$symbol$branch]($style) "
-symbol = " "
+format = ' [$symbol$branch(:$remote_branch)]($style) '
 style = "bold nord9"
 
 [git_status]
-style = "bold nord11"
-format = "([$all_status]($style))"
+style = "bold nord15"
 
 [cmd_duration]
-style = "bold nord13"
+format = " [$duration]($style)"
 min_time = 500
+style = "bold nord10"
 
 [time]
 disabled = false
-format = "[$time]($style) "
+format = ' [$time]($style) '
 style = "bold nord7"
 
 [username]
 show_always = true
+format = "[$user]($style) "
 style_user = "bold nord4"
 
 [hostname]
 style = "bold nord5"
 
 [rust]
-format = "[$symbol$version]($style) "
+format = " [$symbol($version )]($style)"
 style = "bold nord14"
 
 [python]
-format = "[$symbol$version]($style) "
+format = " [$symbol($version )]($style)"
 style = "bold nord14"
 
 [golang]
-format = "[$symbol$version]($style) "
+format = " [$symbol($version )]($style)"
 style = "bold nord14"
 
 [lua]
-format = "[$symbol$version]($style) "
+format = " [$symbol($version )]($style)"
 style = "bold nord14"
 
