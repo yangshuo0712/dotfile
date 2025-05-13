@@ -35,3 +35,7 @@ zinit light ajeetdsouza/zoxide
 zinit light zdharma-continuum/fast-syntax-highlighting
 
 eval "$(zoxide init zsh)"
+
+if [[ -f "$HOME/.zshrc.local" ]]; then
+  source "$HOME/.zshrc.local"
+fi
