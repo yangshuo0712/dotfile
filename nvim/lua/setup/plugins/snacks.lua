@@ -89,12 +89,12 @@ return
                                 win = "list",
                                 title = " Results ",
                                 title_pos = "center",
-                                border = "single"
+                                border = "rounded"
                             },
                             {
                                 win = "input",
                                 height = 1,
-                                border = "single",
+                                border = "rounded",
                                 title = "{title} {live} {flags}",
                                 title_pos = "center"
                             },
@@ -103,7 +103,7 @@ return
                             win = "preview",
                             title = "{preview:Preview}",
                             -- width = 0.45,
-                            border = "single",
+                            border = "rounded",
                             title_pos = "center",
                         },
                     },

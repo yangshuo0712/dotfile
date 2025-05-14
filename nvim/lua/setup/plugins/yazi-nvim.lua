@@ -28,8 +28,8 @@ return
     opts = {
         -- if you want to open yazi instead of netrw, see below for more info
         open_for_directories = false,
-        floating_window_scaling_factor = 0.7,
-        yazi_floating_window_winblend = 30,
+        floating_window_scaling_factor = 0.9,
+        yazi_floating_window_winblend = 0,
         yazi_floating_window_border = "rounded",
         highlight_groups = {
             -- See https://github.com/mikavilpas/yazi.nvim/pull/180

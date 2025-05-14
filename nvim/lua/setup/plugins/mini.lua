@@ -8,35 +8,25 @@ return
             require 'mini.pairs'.setup()
             require 'mini.surround'.setup()
             require 'mini.cursorword'.setup()
+            require 'mini.bracketed'.setup()
             local hipatterns = require 'mini.hipatterns'
             hipatterns.setup({
                 highlighters = {
-                    -- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
                     fixme     = { pattern = '%f[%w]()FIXME()%f[%W]', group = 'MiniHipatternsFixme' },
                     hack      = { pattern = '%f[%w]()HACK()%f[%W]', group = 'MiniHipatternsHack' },
                     todo      = { pattern = '%f[%w]()TODO()%f[%W]', group = 'MiniHipatternsTodo' },
                     note      = { pattern = '%f[%w]()NOTE()%f[%W]', group = 'MiniHipatternsNote' },
-
-                    -- Highlight hex color strings (`#rrggbb`) using that color
                     hex_color = hipatterns.gen_highlighter.hex_color(),
                 },
             })
 
-            -- local minitabline_config = {
-            --     show_icons = true,
-            --     format = function (buf_id, label)
-            --         local suffix = vim.bo[buf_id].modified and '[+] ' or ''
-            --         return MiniTabline.default_format(buf_id, label) .. suffix
-            --     end
-            -- }
-            -- require 'mini.tabline'.setup(minitabline_config)
-            --
             local splitjoin_config = {
                 detect = {
                     separator = '[,;]',
                 }
             }
             require 'mini.splitjoin'.setup(splitjoin_config)
+
             local move_config = {
                 mappings = {
                     -- Move visual selection in Visual mode. Defaults are Alt (Meta) + hjkl.
@@ -59,6 +49,7 @@ return
                 },
             }
             require 'mini.move'.setup(move_config)
+
             local files_config = {
                 options = {
                     -- Whether to delete permanently or move into module-specific trash
@@ -82,6 +73,7 @@ return
                 },
             }
             require 'mini.files'.setup(files_config)
+            ---@diagnostic disable-next-line: undefined-global
             vim.keymap.set('n', '<leader>e', function () MiniFiles.open() end, { desc = 'Open MiniFiles'} )
         end,
     },
