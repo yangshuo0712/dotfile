@@ -26,6 +26,10 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 			vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#81a1c1", bg = "none", nocombine = true })
 			vim.api.nvim_set_hl(0, "NormalFloat", { fg = "#c8D0E0", bg = "#2e3440", nocombine = true })
 			vim.api.nvim_set_hl(0, "StatusLine", {bg = "#434C5E", fg = "#D8DEE9",})
+			vim.api.nvim_set_hl(0, "SnacksNotifierBorderInfo", { fg = "#81a1c1", bg = "none", nocombine = true })
+			vim.api.nvim_set_hl(0, "SnacksNotifierIconInfo", { fg = "#81a1c1", bg = "none", nocombine = true })
+			vim.api.nvim_set_hl(0, "SnacksNotifierTitleInfo", { fg = "#81a1c1", bg = "none", nocombine = true })
+			vim.api.nvim_set_hl(0, "SnacksNotifierFooterInfo", { fg = "#81a1c1", bg = "none", nocombine = true })
 		end
 	end,
 })
