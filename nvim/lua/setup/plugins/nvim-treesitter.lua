@@ -10,6 +10,7 @@ return {
                 "markdown_inline",
                 "yaml",
                 "rust",
+                "go",
             },
             highlight = {
                 enable = true,
