@@ -19,7 +19,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
             vim.cmd("highlight! link NonText Comment")
 			vim.cmd("highlight! MiniCursorword guifg=NONE guibg=NONE gui=underline")
 			vim.cmd("highlight! MiniCursorwordCurrent guifg=NONE guibg=NONE gui=underline")
-			vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#81a1c1", bg = "none", nocombine = true })
+			vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#434c5e", bg = "none", nocombine = true })
 			vim.api.nvim_set_hl(0, "@markup.link", { fg = "#81a1c1", bg = "none", nocombine = true })
 		elseif ColorScheme == "onenord" then
 			vim.cmd("highlight! MiniCursorword guifg=NONE guibg=NONE gui=underline")

@@ -4,10 +4,10 @@ M.hl = {
     statusline = {
         normal = "CustomStatusLineNormal",
         diagnostics = {
-            errors = "StatusLine",
-            warnings = "StatusLine",
-            hints = "StatusLine",
-            info = "StatusLine"},
+            errors = "CustomStatusLineNormal",
+            warnings = "CustomStatusLineNormal",
+            hints = "CustomStatusLineNormal",
+            info = "CustomStatusLineNormal"},
         }
     }
 function M.setup()
@@ -18,7 +18,7 @@ function M.setup()
         hl(0, "CustomStatusLineHint", { fg = "#8be9fd", bg = "#333846", bold = false })
         hl(0, "CustomStatusLineInfo", { fg = "#50fa7b", bg = "#333846", bold = false })
         hl(0, "CustomWinbar", { fg = "#546178", bg ="NONE", bold = false })
-        hl(0, "CustomStatusLineNormal", { fg = "#d8dee9", bg ="#434c5e", bold = true })
+        hl(0, "CustomStatusLineNormal", { fg = "#d8dee9", bg ="#434c5e", bold = false })
     end
     vim.api.nvim_create_autocmd("ColorScheme", {
         pattern = "*",

@@ -78,7 +78,7 @@ return
                     reverse = true,
                     layout = {
                         -- can be 'vertical' or 'horizontal'
-                        box = "vertical",
+                        box = "horizontal",
                         backdrop = false,
                         width = 0.75,
                         height = 0.8,
