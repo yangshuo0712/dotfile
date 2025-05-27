@@ -30,10 +30,19 @@ return {
                         },
                     })
                 end,
+                copilot_gpt41 = function()
+                    return require("codecompanion.adapters").extend("copilot", {
+                        schema = {
+                            model = {
+                                default = "gpt-4.1",
+                            },
+                        },
+                    })
+                end,
             },
             strategies = {
                 chat = {
-                    adapter = 'copilot',
+                    adapter = 'copilot_gpt41',
                     slash_commands = {
                         ["file"] = {
                             -- Location to the slash command in CodeCompanion
