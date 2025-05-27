@@ -9,6 +9,7 @@ return {
 			require("mini.surround").setup()
 			require("mini.cursorword").setup()
 			require("mini.bracketed").setup()
+			require("mini.indentscope").setup()
 			local hipatterns = require("mini.hipatterns")
 			hipatterns.setup({
 				highlighters = {
@@ -98,6 +99,18 @@ return {
 				local desc = "Split " .. direction
 				vim.keymap.set("n", lhs, rhs, { buffer = buf_id, desc = desc })
 			end
+
+            vim.api.nvim_create_autocmd("FileType", {
+                pattern = {
+                    "help",
+                    "lazy",
+                    "mason",
+                    "trouble"
+                },
+                callback = function ()
+                    vim.b.miniindentscope_disable = true
+                end,
+            })
 
 			vim.api.nvim_create_autocmd("User", {
 				pattern = "MiniFilesBufferCreate",
