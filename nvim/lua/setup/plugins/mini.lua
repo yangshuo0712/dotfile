@@ -10,6 +10,7 @@ return {
 			require("mini.cursorword").setup()
 			require("mini.bracketed").setup()
 			require("mini.indentscope").setup()
+            require("mini.pick").setup()
 			local hipatterns = require("mini.hipatterns")
 			hipatterns.setup({
 				highlighters = {

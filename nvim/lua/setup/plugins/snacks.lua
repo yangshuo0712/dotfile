@@ -14,7 +14,13 @@ return
         quickfile = { enabled = false },
         scope = { enabled = true },
         scroll = { enabled = true },
-        statuscolumn = { enabled = true },
+        statuscolumn = {
+            enabled = true,
+            folds = {
+                open = true,
+                git_hl = false,
+            }
+        },
         words = { enabled = true },
         explorer = {
             enabled = false,
