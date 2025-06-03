@@ -29,8 +29,3 @@ opt.laststatus = 3
 -- opt.fillchars = "vert: ,horiz: "
 opt.langmenu = 'en_US.UTF-8'
 vim.cmd('language messages en_US.UTF-8')
-
-vim.diagnostic.config({
-    virtual_lines = { current_line = true },
-    -- virtual_text = true,
-})

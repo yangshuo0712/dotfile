@@ -5,6 +5,7 @@ return {
 		version = false,
 		config = function()
 			require("mini.ai").setup()
+			require("mini.icons").setup()
 			require("mini.pairs").setup()
 			require("mini.surround").setup()
 			require("mini.cursorword").setup()
@@ -84,17 +85,12 @@ return {
 					use_as_default_explorer = true,
 				},
 
-				-- Customization of explorer windows
 				windows = {
-					-- Maximum number of windows to show side by side
 					max_number = math.huge,
 					-- Whether to show preview of file/directory under cursor
 					preview = false,
-					-- Width of focused window
 					width_focus = 35,
-					-- Width of non-focused window
 					width_nofocus = 15,
-					-- Width of preview window
 					width_preview = 25,
 				},
 			}
@@ -221,10 +217,10 @@ return {
 			})
 		end,
 	},
-	{
-		"echasnovski/mini.icons",
-		config = function()
-			require("mini.icons").setup()
-		end,
-	},
+	-- {
+	-- 	"echasnovski/mini.icons",
+	-- 	config = function()
+	-- 		require("mini.icons").setup()
+	-- 	end,
+	-- },
 }

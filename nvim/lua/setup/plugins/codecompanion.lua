@@ -12,7 +12,7 @@ return {
                     show_settings = true,
                 },
                 action_palette = {
-                    provider = 'snacks',
+                    provider = "mini_pick",
                 },
             },
             -- Defines adapters for code completion,
@@ -49,13 +49,13 @@ return {
                             callback = "strategies.chat.slash_commands.file",
                             description = "Select a file using snacks",
                             opts = {
-                                provider = "snacks", -- Other options include 'default', 'mini_pick', 'fzf_lua', snacks
+                                provider = "mini_pick", -- Other options include 'default', 'mini_pick', 'fzf_lua', snacks
                                 contains_code = true,
                             },
                         },
                         ['buffer'] = {
                             opts = {
-                                provider = "snacks",
+                                provider = "mini_pick",
                             }
                         }
                     },
