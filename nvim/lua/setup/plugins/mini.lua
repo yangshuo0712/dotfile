@@ -178,11 +178,6 @@ return {
 				end,
 			})
 
-            -- overwrite the ui select
-			vim.ui.select = function(items, opts, on_choice)
-				local start_opts = { window = { config = { width = vim.o.columns } } }
-				return MiniPick.ui_select(items, opts, on_choice, start_opts)
-			end
             -- keybinds
 			vim.keymap.set("n", "<leader>ff", "<Cmd>Pick files<Enter>", { noremap = true, silent = true })
 			vim.keymap.set("n", "<leader>,", "<Cmd>Pick buffers<Enter>", { noremap = true, silent = true })
@@ -205,14 +200,25 @@ return {
 			vim.keymap.set("n", "<leader>sd", function()
 				MiniExtra.pickers.diagnostic()
 			end, { noremap = true, silent = true })
+            vim.keymap.set("n", "<leader>sj", function ()
+                MiniExtra.pickers.list({ scope = "jump" })
+            end, { noremap = true, silent = true })
+            vim.keymap.set("n", "<leader>sk", function ()
+                MiniExtra.pickers.keymaps({ scope = "all" })
+            end, { noremap = true, silent = true })
 			vim.keymap.set("n", "<leader>sD", function()
 				MiniExtra.pickers.diagnostic({ scope = "current" })
 			end, { noremap = true, silent = true })
-			vim.keymap.set("n", "<leader>td", function()
-				MiniPick.builtin.grep({
-					pattern = [[TODO|FIXME|NOTE|HACK]],
-				})
-			end, { desc = "Search TODO/FIXME/NOTE/HACK comment." })
+            vim.keymap.set("n", "<leader>td", function ()
+                MiniExtra.pickers.hipatterns({ scope = "all" })
+            end, { noremap = true, silent = true })
+			vim.keymap.set("n", "<leader>sH", function()
+                MiniExtra.pickers.hl_groups()
+			end, {
+			    noremap = true,
+			    silent = true,
+                desc = "Search the hl_groups."
+			})
 		end,
 	},
 	{
