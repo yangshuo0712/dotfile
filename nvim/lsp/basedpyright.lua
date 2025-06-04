@@ -1,6 +1,6 @@
 return {
 	cmd = { "basedpyright-langserver", "--stdio" },
-	filetyes = { "python" },
+	filetypes = { "python" },
 	root_markers = {
 		"pyproject.toml",
 		"setup.py",
