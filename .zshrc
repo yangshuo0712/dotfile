@@ -1,6 +1,7 @@
 export EDITOR="nvim"
 alias ya="yazi"
 alias lg="lazygit"
+bindkey -e
 eval "$(starship init zsh)"
 
 autoload -Uz compinit

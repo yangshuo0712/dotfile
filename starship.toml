@@ -70,6 +70,12 @@ format = " [$symbol($version )]($style)"
 [python]
 format = " [$symbol($version )]($style)"
 
+# To suppress conda's own prompt modifier, run
+# 'conda config --set changeps1 False'
+[conda]
+format = " [$symbol$environment]($style)"
+style = "bold nord9"
+
 [golang]
 format = " [$symbol($version )]($style)"
 
