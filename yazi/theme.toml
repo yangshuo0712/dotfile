@@ -1,0 +1,3 @@
+[manager]
+border_symbol = "│"
+border_style  = { fg = "#43445E" }
