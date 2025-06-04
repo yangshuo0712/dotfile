@@ -74,7 +74,7 @@ format = " [$symbol($version )]($style)"
 # 'conda config --set changeps1 False'
 [conda]
 format = " [$symbol$environment]($style)"
-style = "bold nord9"
+style = "bold nord8"
 
 [golang]
 format = " [$symbol($version )]($style)"
