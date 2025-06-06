@@ -23,6 +23,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
             vim.cmd("highlight! MiniCursorwordCurrent guifg=NONE guibg=NONE gui=underline")
             vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#434C5E", bg = "none", nocombine = true })
             vim.api.nvim_set_hl(0, "@markup.link", { fg = "#81A1C1", bg = "none", nocombine = true })
+            -- vim.api.nvim_set_hl(0, "PMenuSel", { bg = "#3B4252", nocombine = true })
             vim.api.nvim_set_hl(0, "@markup.heading.1.markdown", { fg = "#8FBCBB", bold = true, nocombine = true })
             vim.api.nvim_set_hl(0, "@markup.heading.2.markdown", { fg = "#88C0D0", bold = true, nocombine = true })
             vim.api.nvim_set_hl(0, "@markup.heading.3.markdown", { fg = "#81A1C1", bold = true, nocombine = true })
