@@ -63,7 +63,7 @@ local function diagnostics(hl_groups)
     local errors   = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR })
     local warnings = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.WARN })
     local hints    = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.HINT })
-    local infos     = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.INFO })
+    local infos    = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.INFO })
 
     if errors ~= 0 or warnings ~= 0 then
         diag_str = string.format("%%#%s# %s%%#%s#  %s",
