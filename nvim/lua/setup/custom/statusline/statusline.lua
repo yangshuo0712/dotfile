@@ -6,6 +6,8 @@ local custom_hl = {
         diagnostics = {
             errors = "CustomStatusLineError",
             warnings = "CustomStatusLineWarning",
+            hints = "CustomStatusLineHint",
+            infos = "CustomStatusLineInfo",
         }
     }
 }
@@ -29,6 +31,16 @@ local function get_mode(hl_group)
     return string.format("%%#%s# %s ", hl_group, modes[mode] or mode)
 end
 
+local function ft_with_icon()
+    local ext = vim.bo.filetype
+    if ext == "" then
+        return ""
+    end
+    ---@diagnostic disable-next-line: undefined-global
+    local icon, hl, _ = MiniIcons.get("extension", ext)
+    return string.format("%%#%s# %s %%#CustomStatusLineNormal# %s", hl, icon, ext)
+end
+
 local function lsp_client()
     local msg = ''
     local buf_ft = vim.api.nvim_get_option_value('filetype', { buf = 0 })
@@ -37,7 +49,7 @@ local function lsp_client()
         return msg
     end
     for _, client in ipairs(clients) do
----@diagnostic disable-next-line: undefined-field
+        ---@diagnostic disable-next-line: undefined-field
         local filetypes = client.config.filetypes
         if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
             return client.name
@@ -50,15 +62,16 @@ local function diagnostics(hl_groups)
     local diag_str = ""
     local errors   = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR })
     local warnings = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.WARN })
-    -- local hints    = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.HINT })
-    -- local info     = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.INFO })
+    local hints    = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.HINT })
+    local infos     = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.INFO })
 
     if errors ~= 0 or warnings ~= 0 then
         diag_str = string.format("%%#%s# %s%%#%s#  %s",
             hl_groups.errors,
             errors,
             hl_groups.warnings,
-            warnings)
+            warnings
+            )
     end
 
     return diag_str
@@ -101,10 +114,9 @@ M.render = function()
         "    ",
         path.pretty_path({ max_depth = 4 }),
         " %m %r %h %w ",
-        "%= ",
-        search_count(),
-        "    ",
         diagnostics(custom_hl.statusline.diagnostics),
+        "%= ",
+        ft_with_icon(),
         "    ",
         -- search_count(),
         lsp_client(),

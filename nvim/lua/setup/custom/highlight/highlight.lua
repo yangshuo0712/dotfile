@@ -1,11 +1,11 @@
 local M = {}
 
-local p = require 'setup.custom.utils.palette'
+local palette = require 'setup.custom.utils.palette'
 
 local function set_common_highlights(p)
   local hl = vim.api.nvim_set_hl
-  hl(0, "CustomStatusLineError",   { fg = p.error, bg = p.bg_dark })
-  hl(0, "CustomStatusLineWarning", { fg = p.warn,  bg = p.bg_dark })
+  hl(0, "CustomStatusLineError",   { fg = p.error })
+  hl(0, "CustomStatusLineWarning", { fg = p.warn  })
   hl(0, "CustomStatusLineHint",    { fg = p.hint,  bg = p.bg_dark })
   hl(0, "CustomStatusLineInfo",    { fg = p.info,  bg = p.bg_dark })
   hl(0, "CustomStatusLineNormal",  { fg = p.normal, bg = p.bg_line })
@@ -55,7 +55,7 @@ local function set_theme_overrides()
 end
 
 function M.setup()
-  set_common_highlights(p)
+  set_common_highlights(palette)
   set_theme_overrides()
 end
 

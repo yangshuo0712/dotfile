@@ -13,7 +13,6 @@ return {
             require("mini.extra").setup()
 
             local icons_config = {
-
                 -- Icon style: 'glyph' or 'ascii'
                 style              = 'glyph',
 
