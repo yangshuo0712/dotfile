@@ -2,6 +2,7 @@ export EDITOR="nvim"
 alias ya="yazi"
 alias lg="lazygit"
 bindkey -e
+bindkey '^\]' autosuggest-accept
 eval "$(starship init zsh)"
 
 autoload -Uz compinit
