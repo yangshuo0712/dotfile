@@ -37,7 +37,7 @@ local function ft_with_icon()
         return ""
     end
     ---@diagnostic disable-next-line: undefined-global
-    local icon, hl, _ = MiniIcons.get("extension", ext)
+    local icon, hl, _ = MiniIcons.get("filetype", ext)
     return string.format("%%#%s#%s %%#CustomStatusLineNormal#%s", hl, icon, ext)
 end
 
@@ -112,7 +112,7 @@ M.render = function()
     return table.concat({
         get_mode(custom_hl.statusline.normal),
         "    ",
-        path.pretty_path({ max_depth = 4 }),
+        path.pretty_path({ max_depth = 4, cwd_indicator = "" }),
         " %m %r %h %w ",
         diagnostics(custom_hl.statusline.diagnostics),
         "%= ",
