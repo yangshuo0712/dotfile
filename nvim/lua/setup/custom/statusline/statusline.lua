@@ -38,7 +38,7 @@ local function ft_with_icon()
     end
     ---@diagnostic disable-next-line: undefined-global
     local icon, hl, _ = MiniIcons.get("extension", ext)
-    return string.format("%%#%s# %s %%#CustomStatusLineNormal# %s", hl, icon, ext)
+    return string.format("%%#%s#%s %%#CustomStatusLineNormal#%s", hl, icon, ext)
 end
 
 local function lsp_client()
@@ -116,10 +116,10 @@ M.render = function()
         " %m %r %h %w ",
         diagnostics(custom_hl.statusline.diagnostics),
         "%= ",
-        ft_with_icon(),
+        lsp_client(),
         "    ",
         -- search_count(),
-        lsp_client(),
+        ft_with_icon(),
         "    ",
         " %l,%c",
         "    ",
