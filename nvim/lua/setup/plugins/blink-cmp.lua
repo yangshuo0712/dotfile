@@ -9,7 +9,7 @@ return {
 	---type blink.cmp.Config
 	opts = {
 		signature = {
-			enabled = true,
+			enabled = false,
 		},
 		appearance = {
 			use_nvim_cmp_as_default = false,

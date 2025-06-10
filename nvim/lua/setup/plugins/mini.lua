@@ -21,7 +21,7 @@ return {
                 directory          = {},
                 extension          = {},
                 file               = {},
-                filetype           = {},
+                filetype           = { go = { glyph = '', hl = 'MiniIconsAzure' } },
                 lsp                = {},
                 os                 = {},
 
