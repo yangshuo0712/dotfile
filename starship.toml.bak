@@ -1,0 +1,93 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+right_format = """
+$cmd_duration
+$time
+"""
+add_newline = true
+
+palette = "catppuccin_frappe"
+
+[palettes.catppuccin_frappe]
+rosewater = "#f2d5cf"
+flamingo  = "#eebebe"
+pink      = "#f4b8e4"
+mauve     = "#ca9ee6"
+red       = "#e78284"
+maroon    = "#ea999c"
+peach     = "#ef9f76"
+yellow    = "#e5c890"
+green     = "#a6d189"
+teal      = "#81c8be"
+sky       = "#99d1db"
+sapphire  = "#85c1dc"
+blue      = "#8caaee"
+lavender  = "#babbf1"
+text      = "#c6d0f5"
+subtext1  = "#b5bfe2"
+subtext0  = "#a5adce"
+overlay2  = "#949cbb"
+overlay1  = "#838ba7"
+overlay0  = "#737994"
+surface2  = "#626880"
+surface1  = "#51576d"
+surface0  = "#414559"
+base      = "#303446"
+mantle    = "#292c3c"
+crust     = "#232634"
+
+[package]
+disabled = true
+
+[character]
+success_symbol = '[➜](bold green)'
+error_symbol   = '[✗](bold red)'
+
+[directory]
+style             = "bold lavender"
+truncate_to_repo  = false
+truncation_length = 0
+truncation_symbol = '…/'
+
+[git_branch]
+format = ' [$symbol$branch(:$remote_branch)]($style) '
+style  = "bold mauve"
+
+[git_status]
+style = "bold mauve"
+
+[cmd_duration]
+format   = " [$duration]($style)"
+min_time = 500
+style    = "bold sky"
+
+[time]
+disabled = false
+format   = ' [$time]($style) '
+style    = "bold teal"
+
+[username]
+show_always = true
+format      = "[$user]($style) "
+style_user  = "bold text"
+
+[hostname]
+style = "bold subtext1"
+
+[rust]
+format = " [$symbol($version )]($style)"
+
+[python]
+format = " [$symbol($version )]($style)"
+
+# To suppress conda's own prompt modifier, run:
+# conda config --set changeps1 False
+[conda]
+format = " [$symbol$environment]($style)"
+style  = "bold sapphire"
+
+[golang]
+format = " [$symbol($version )]($style)"
+
+[lua]
+format = " [$symbol($version )]($style)"

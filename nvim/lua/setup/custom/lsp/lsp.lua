@@ -6,6 +6,7 @@ M.servers = {
     "clangd",
     "rust-analyzer",
     "gopls",
+    "ruff",
 }
 
 function M.on_attach(event)
@@ -24,8 +25,8 @@ function M.on_attach(event)
         "Hover")
 
     vim.diagnostic.config({
-        virtual_lines = { current_line = true },
-        -- virtual_text = true,
+        -- virtual_lines = { current_line = true },
+        virtual_text = true,
     })
 
     --inlayhints

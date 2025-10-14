@@ -13,7 +13,7 @@ return
         notifier = { enabled = true, },
         quickfile = { enabled = false },
         scope = { enabled = true },
-        scroll = { enabled = true },
+        scroll = { enabled = false },
         statuscolumn = {
             enabled = true,
             folds = {
