@@ -21,7 +21,7 @@ return {
 				"path",
 				"snippets",
 				"buffer",
-				"codecompanion",
+				-- "codecompanion",
 			},
 		},
 		cmdline = {

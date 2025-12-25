@@ -3,7 +3,6 @@ alias ya="yazi"
 alias lg="lazygit"
 bindkey -e
 bindkey '^\]' autosuggest-accept
-eval "$(starship init zsh)"
 
 autoload -Uz compinit
 compinit
@@ -41,3 +40,5 @@ eval "$(zoxide init zsh)"
 if [[ -f "$HOME/.zshrc.local" ]]; then
   source "$HOME/.zshrc.local"
 fi
+
+eval "$(starship init zsh)"

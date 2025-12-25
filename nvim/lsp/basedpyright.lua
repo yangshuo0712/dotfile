@@ -14,14 +14,15 @@ return {
 		basedpyright = {
             disableOrganizeImports = true,
 			analysis = {
+                typeCheckingMode = "basic",
 				autoSearchPaths = true,
 				diagnosticMode = "openFilesOnly",
 				useLibraryCodeForTypes = true,
                 inlayHints = {
                     callArgumentNames = true
                 },
-                ignore = { '*' }
 			},
 		},
 	},
 }
+

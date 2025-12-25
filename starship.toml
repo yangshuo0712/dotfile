@@ -1,84 +1,277 @@
 "$schema" = 'https://starship.rs/config-schema.json'
-
-right_format = """
-$cmd_duration
-$time
-"""
-add_newline = true
-
-palette = "nord"
-
-[palettes.nord]
-nord0 = "#2E3440"
-nord1 = "#3B4252"
-nord2 = "#434C5E"
-nord3 = "#4C566A"
-nord4 = "#D8DEE9"
-nord5 = "#E5E9F0"
-nord6 = "#ECEFF4"
-nord7 = "#8FBCBB"
-nord8 = "#88C0D0"
-nord9 = "#81A1C1"
-nord10 = "#5E81AC"
-nord11 = "#BF616A"
-nord12 = "#D08770"
-nord13 = "#EBCB8B"
-nord14 = "#A3BE8C"
-nord15 = "#B48EAD"
-
-[package]
-disabled = true
-
-[character]
-success_symbol = '[➜](bold nord14)'
-error_symbol = '[✗](bold nord11)'
-
-[directory]
-style = "bold nord8"
-truncate_to_repo = false
-truncation_length = 0
-truncation_symbol = '…/'
-
-[git_branch]
-format = ' [$symbol$branch(:$remote_branch)]($style) '
-style = "bold nord9"
-
-[git_status]
-style = "bold nord15"
-
-[cmd_duration]
-format = " [$duration]($style)"
-min_time = 500
-style = "bold nord10"
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$aws\
+$buf\
+$bun\
+$c\
+$cmake\
+$cpp\
+$crystal\
+$dart\
+$deno\
+$docker_context\
+$elixir\
+$elm\
+$fennel\
+$fossil_branch\
+$gcloud\
+$golang\
+$gradle\
+$guix_shell\
+$haskell\
+$haxe\
+$hg_branch\
+$java\
+$julia\
+$kotlin\
+$lua\
+$memory_usage\
+$meson\
+$nim\
+$nix_shell\
+$nodejs\
+$ocaml\
+$package\
+$perl\
+$php\
+$pijul_channel\
+$pixi\
+$python\
+$rlang\
+$ruby\
+$rust\
+$scala\
+$swift\
+$zig\
+$fill\
+$conda\
+$cmd_duration\
+$time\
+$line_break\
+$character"""
 
 [time]
 disabled = false
-format = ' [$time]($style) '
-style = "bold nord7"
+style = "dimmed white"
+format = '[$time]($style) '
+time_format = "%R" # HH:MM:SS if HH:MM, set to %R
 
-[username]
-show_always = true
-format = "[$user]($style) "
-style_user = "bold nord4"
+[directory]
+style = "blue"
+read_only = " 󰌾"
 
-[hostname]
-style = "bold nord5"
+[character]
+success_symbol = "[❯](purple)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](green)"
 
-[rust]
-format = " [$symbol($version )]($style)"
+[git_branch]
+symbol = " "
+style = "purple"
+format = "[$symbol$branch]($style) "
 
-[python]
-format = " [$symbol($version )]($style)"
+[git_status]
+style = "purple"
+format = "[$all_status$ahead_behind]($style) "
 
-# To suppress conda's own prompt modifier, run
-# 'conda config --set changeps1 False'
+[cmd_duration]
+min_time = 2000
+style = "yellow"
+format = "[$duration]($style) "
+
+[aws]
+symbol = "  "
+
+[buf]
+symbol = " "
+
+[bun]
+symbol = " "
+
+[c]
+symbol = " "
+
+[cpp]
+symbol = " "
+
+[cmake]
+symbol = " "
+
 [conda]
-format = " [$symbol$environment]($style)"
-style = "bold nord8"
+# symbol = " "
+style = "green"
+format = '[$symbol$environment]($style) '
+
+[crystal]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[deno]
+symbol = " "
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[fennel]
+symbol = " "
+
+[fossil_branch]
+symbol = " "
+
+[gcloud]
+symbol = "  "
+
+[git_commit]
+tag_symbol = '  '
 
 [golang]
-format = " [$symbol($version )]($style)"
+symbol = " "
+
+[guix_shell]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[haxe]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[hostname]
+ssh_symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[kotlin]
+symbol = " "
 
 [lua]
-format = " [$symbol($version )]($style)"
+symbol = " "
+style = "blue"
+format = '[$symbol$version]($style) '
 
+[memory_usage]
+symbol = "󰍛 "
+
+[meson]
+symbol = "󰔷 "
+
+[nim]
+symbol = "󰆥 "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[ocaml]
+symbol = " "
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CachyOS = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+Nobara = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+RockyLinux = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Void = " "
+Windows = "󰍲 "
+
+[package]
+symbol = "󰏗 "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[pijul_channel]
+symbol = " "
+
+[pixi]
+symbol = "󰏗 "
+
+[python]
+symbol = " "
+style = "yellow"
+format = '[$symbol$version]($style) '
+
+[rlang]
+symbol = "󰟔 "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = "󱘗 "
+
+[scala]
+symbol = " "
+
+[swift]
+symbol = " "
+
+[zig]
+symbol = " "
+
+[gradle]
+symbol = " "

@@ -8,7 +8,7 @@ return
     opts = {
         bigfile = { enabled = true },
         dashboard = { enabled = false },
-        indent = { enabled = false },
+        indent = { enabled = true },
         input = { enabled = true },
         notifier = { enabled = true, },
         quickfile = { enabled = false },
@@ -21,7 +21,7 @@ return
                 git_hl = false,
             }
         },
-        words = { enabled = true },
+        words = { enabled = false },
         explorer = {
             enabled = false,
             replace_netrw = true,

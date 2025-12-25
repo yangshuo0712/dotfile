@@ -8,6 +8,7 @@ local custom_hl = {
             warnings = "CustomStatusLineWarning",
             hints = "CustomStatusLineHint",
             infos = "CustomStatusLineInfo",
+            normal = "CustomStatusLineNormal",
         }
     }
 }
@@ -66,10 +67,10 @@ local function diagnostics(hl_groups)
     local infos    = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.INFO })
 
     if errors ~= 0 or warnings ~= 0 then
-        diag_str = string.format("%%#%s# %s%%#%s#  %s",
-            hl_groups.errors,
+        diag_str = string.format("%%#%s# %s%%#%s#  %s%%#CustomStatusLineNormal#",
+            hl_groups.normal,
             errors,
-            hl_groups.warnings,
+            hl_groups.normal,
             warnings
             )
     end
@@ -124,6 +125,7 @@ M.render = function()
         " %l,%c",
         "    ",
         cursor_position(custom_hl.statusline.normal),
+        "%#CustomStatusLineNormal#"
     })
 end
 

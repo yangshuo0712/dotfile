@@ -37,8 +37,10 @@ local filename = parts[#parts]
   local basename, ext = filename:match("^(.*)(%.[^.]+)$")
   if not basename then basename, ext = filename, "" end
   parts[#parts] = table.concat({
-    "%#StatusLineFilename#" .. basename .. "%*",
-    "%#StatusLineFileExt#"  .. ext      .. "%*",
+    -- "%#StatusLineFilename#" .. basename .. "%*",
+    -- "%#StatusLineFileExt#"  .. ext      .. "%*",
+    basename,
+    ext,
   })
 
   local final = table.concat(parts, sep)

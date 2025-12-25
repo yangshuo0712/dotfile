@@ -7,9 +7,9 @@ return {
             require("mini.ai").setup()
             require("mini.pairs").setup()
             require("mini.surround").setup()
-            require("mini.cursorword").setup()
+            -- require("mini.cursorword").setup()
             require("mini.bracketed").setup()
-            require("mini.indentscope").setup()
+            -- require("mini.indentscope").setup()
             require("mini.extra").setup()
 
             local icons_config = {
@@ -106,7 +106,7 @@ return {
                     max_number = math.huge,
                     -- Whether to show preview of file/directory under cursor
                     preview = false,
-                    width_focus = 35,
+                    width_focus = 25,
                     width_nofocus = 15,
                     width_preview = 25,
                 },
@@ -224,9 +224,8 @@ return {
                     vim.api.nvim_win_set_config(args.data.win_id, config)
                 end,
             })
-
-            -- keybinds
             require("mini.files").setup(files_config)
+            -- keybinds
             vim.keymap.set("n", "<leader>e", function()
                 if not MiniFiles.close() then
                     MiniFiles.open()

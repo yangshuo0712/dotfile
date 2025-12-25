@@ -47,7 +47,7 @@ return {
 				return
 			end
 			runme.setup({
-				terminal_opts = { size = 15, direction = "horizontal", close_on_exit = false, open_mapping = nil },
+				terminal_opts = { size = 30, direction = "vertical", close_on_exit = false, open_mapping = nil },
 				keymaps = { run_file = "<F5>", run_selection = "<leader>r", send_to_repl = "<leader>R" },
 				tmp_dir = nil,
 				use_toggleterm = true,
