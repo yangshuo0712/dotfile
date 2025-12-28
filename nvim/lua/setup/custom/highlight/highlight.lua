@@ -1,6 +1,5 @@
 local M = {}
 
--- 引入你的 palette
 local palette = require("setup.custom.utils.palette")
 
 local function set_common_highlights(p)

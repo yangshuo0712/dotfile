@@ -29,8 +29,7 @@ gui:
       - "#BF616A" # nord11
     defaultFgColor:
       - default
-
 git:
-  paging:
-    colorArg: always
-    pager: delta --dark --paging=never
+  pagers:
+    - colorArg: always
+      pager: delta --dark --paging=never

@@ -14,6 +14,10 @@ return
         console = {
             size = { width = "95%", height = "75%" },
             dir = "col",
-        }
+        },
+        editor = {
+            fold_imports = true,
+        },
+        -- image_support = true,
     },
 }

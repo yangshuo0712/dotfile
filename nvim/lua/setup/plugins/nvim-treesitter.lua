@@ -1,36 +1,35 @@
 return {
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-    config = function ()
-        require'nvim-treesitter.configs'.setup {
-            ensure_installed = {
-                "python",
-                "lua",
-                "markdown",
-                "markdown_inline",
-                "yaml",
-                "rust",
-                "go",
-            },
-            highlight = {
-                enable = true,
-            },
-            incremental_selection = {
-                enable = true,
-                keymaps = {
-                    init_selection = "<CR>",
-                    node_incremental = "<CR>",
-                    scope_incremental = "<TAB>",
-                    node_decremental = "<BS>",
-                }
-            },
-            folding = {
-                enable = true,
-                disable = {"txt", "markdown"},
-            }
-        }
-        vim.wo.foldmethod = 'expr'
-        vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+  "nvim-treesitter/nvim-treesitter",
+  branch = "main",
+  lazy = false,
+  build = ":TSUpdate",
+  config = function()
+    local ts = require("nvim-treesitter")
+
+    ts.setup({
+      install_dir = vim.fn.stdpath("data") .. "/site",
+    })
+
+    local languages = {
+      "python", "lua", "markdown", "markdown_inline",
+      "yaml", "rust", "go", "html", "vim", "vimdoc"
+    }
+
+    ts.install(languages)
+
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = languages,
+      callback = function(args)
+        local bufnr = args.buf
+
+        vim.treesitter.start(bufnr)
+
+        vim.bo[bufnr].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+
+        vim.wo.foldmethod = "expr"
+        vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
         vim.wo.foldlevel = 99
-    end
+      end,
+    })
+  end,
 }
