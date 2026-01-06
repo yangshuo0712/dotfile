@@ -1,27 +1,30 @@
 return {
-    -- {
-    --     "shaunsingh/nord.nvim",
-    --     priority = 1001,
-    --     config = function()
-    --         -- example
-    --         vim.g.nord_contrast = false
-    --         vim.g.nord_borders = true
-    --         vim.g.nord_disable_background = true
-    --         vim.g.nord_italic = false
-    --         vim.g.nord_uniform_diff_background = false
-    --         vim.g.nord_bold = false
-    --
-    --         require('nord').set()
-    --         vim.cmd("colorscheme nord")
-    --     end,
-    -- },
     {
         "gbprod/nord.nvim",
         lazy = false,
         priority = 1000,
         config = function()
-            require("nord").setup({})
+            require("nord").setup({
+                styles = {
+                    -- Style to be applied to different syntax groups
+                    -- Value is any valid attr-list value for `:help nvim_set_hl`
+                    comments = { italic = false },
+                    keywords = {},
+                    functions = {},
+                    variables = {},
+                }
+            })
             vim.cmd.colorscheme("nord")
         end,
     },
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000,
+        config = function()
+            -- vim.cmd.colorscheme "catppuccin-frappe"
+        end
+    }
+
+
 }

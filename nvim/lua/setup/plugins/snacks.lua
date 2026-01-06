@@ -14,6 +14,7 @@ return
         quickfile = { enabled = false },
         scope = { enabled = true },
         scroll = { enabled = false },
+        image = {},
         statuscolumn = {
             enabled = true,
             folds = {

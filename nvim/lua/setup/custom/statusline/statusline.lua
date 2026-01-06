@@ -39,7 +39,15 @@ local function ft_with_icon()
     end
     ---@diagnostic disable-next-line: undefined-global
     local icon, hl, _ = MiniIcons.get("filetype", ext)
-    return string.format("%%#%s#%s %%#CustomStatusLineNormal#%s", hl, icon, ext)
+    local icon_hl = hl and hl ~= "" and hl or custom_hl.statusline.normal
+
+    return string.format(
+        "%%#%s#%s %%#%s#%s",
+        icon_hl,
+        icon or "",
+        custom_hl.statusline.normal,
+        ext
+    )
 end
 
 local function lsp_client()
