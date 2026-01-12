@@ -1,4 +1,9 @@
 export EDITOR="nvim"
+
+export AVANTE_GEMINI_API_KEY=AIzaSyC7G7WyMvQpmALx7fvUH63235FJvxgc6Bw
+export GEMINI_API_KEY=AIzaSyC7G7WyMvQpmALx7fvUH63235FJvxgc6Bw
+alias avante='nvim -c "lua vim.defer_fn(function()require(\"avante.api\").zen_mode()end, 100)"'
+
 alias ya="yazi"
 alias lg="lazygit"
 bindkey -e
@@ -42,3 +47,7 @@ if [[ -f "$HOME/.zshrc.local" ]]; then
 fi
 
 eval "$(starship init zsh)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
