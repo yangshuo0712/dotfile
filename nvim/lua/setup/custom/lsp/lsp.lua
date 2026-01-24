@@ -7,6 +7,7 @@ M.servers = {
     "rust-analyzer",
     "gopls",
     "ruff",
+    "texlab",
 }
 
 function M.on_attach(event)
