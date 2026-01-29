@@ -1,13 +1,12 @@
 local P = {}
 
-P.base = {
+P.statusline = {
   error   = "#ff5555",
   warn    = "#f1fa8c",
   hint    = "#8be9fd",
   info    = "#50fa7b",
-  normal  = "#d8dee9",
-  bg_dark = "#333846",
-  bg_line = "#434c5e",
+  normal_fg  = "#d8dee9",
+  normal_bg  = "#4c566a",
   fg_winbar = "#546178",
 }
 

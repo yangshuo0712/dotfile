@@ -8,6 +8,13 @@ keymap.set("i", "jk", "<esc>")
 keymap.set("v", "H", "^") -- move cursor to line ending
 keymap.set("v", "L", "$") -- move cursor to line begining
 keymap.set("v", "<C-e>", "%")
+keymap.set("v", "j", function()
+  return (vim.v.count == 0 and vim.wo.wrap) and "gj" or "j"
+end, { expr = true, silent = true })
+
+keymap.set("v", "k", function()
+  return (vim.v.count == 0 and vim.wo.wrap) and "gk" or "k"
+end, { expr = true, silent = true })
 
 -- normal mode
 keymap.set("n", "<leader>ww", "<Cmd>w<CR>")
@@ -34,6 +41,14 @@ keymap.set('n', '<C-h>', '<C-w>h')
 keymap.set('n', '<C-j>', '<C-w>j')
 keymap.set('n', '<C-k>', '<C-w>k')
 keymap.set('n', '<C-l>', '<C-w>l')
+-- wrap-aware j/k: when wrap is on, move by display line; keep counts working
+keymap.set("n", "j", function()
+  return (vim.v.count == 0 and vim.wo.wrap) and "gj" or "j"
+end, { expr = true, silent = true })
+
+keymap.set("n", "k", function()
+  return (vim.v.count == 0 and vim.wo.wrap) and "gk" or "k"
+end, { expr = true, silent = true })
 -- keymap.set("n", "<C-w>q", "<Cmd>bd<CR>")
 -- terminal mode
 -- NOTE: this doesn't work in terminal emulators/tmux/etc

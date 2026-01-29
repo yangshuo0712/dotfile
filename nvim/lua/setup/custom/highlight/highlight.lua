@@ -4,12 +4,12 @@ local palette = require("setup.custom.utils.palette")
 
 local function set_common_highlights(p)
     local hl = vim.api.nvim_set_hl
-    local b = p.base
-    hl(0, "CustomStatusLineError", { fg = b.error })
-    hl(0, "CustomStatusLineWarning", { fg = b.warn })
-    hl(0, "CustomStatusLineHint", { fg = b.hint, bg = b.bg_dark })
-    hl(0, "CustomStatusLineInfo", { fg = b.info, bg = b.bg_dark })
-    hl(0, "CustomStatusLineNormal", { fg = b.normal, bg = b.bg_line })
+    local b = p.statusline
+    hl(0, "CustomStatusLineError", { fg = b.error, bg = b.normal_bg })
+    hl(0, "CustomStatusLineWarning", { fg = b.warn, bg = b.normal_bg })
+    hl(0, "CustomStatusLineHint", { fg = b.hint, bg = b.normal_bg })
+    hl(0, "CustomStatusLineInfo", { fg = b.info, bg = b.normal_bg })
+    hl(0, "CustomStatusLineNormal", { fg = b.normal_fg, bg = b.normal_bg })
     hl(0, "CustomWinbar", { fg = b.fg_winbar, bg = "NONE" })
 end
 
