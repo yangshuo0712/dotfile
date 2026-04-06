@@ -1,0 +1,15 @@
+theme = Nordfox
+font-family = JetBrains Mono
+font-size = 13
+adjust-cell-height = 2
+window-colorspace      = display-p3
+window-padding-x       = 1
+window-padding-y       = 1
+window-padding-color   = extend
+window-padding-balance = true
+window-step-resize     = false
+window-save-state      = always
+macos-titlebar-style = transparent
+macos-titlebar-proxy-icon = hidden
+title = " "
+macos-option-as-alt = true

@@ -12,7 +12,7 @@ return {
 
         local languages = {
             "python", "lua", "markdown", "markdown_inline",
-            "yaml", "rust", "go", "html", "vim", "vimdoc"
+            "yaml", "rust", "go", "html", "vim", "vimdoc", "java"
         }
 
         ts.install (languages)

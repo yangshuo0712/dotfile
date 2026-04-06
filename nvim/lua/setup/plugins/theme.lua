@@ -14,7 +14,14 @@ return {
                     variables = {},
                 }
             })
-            vim.cmd.colorscheme("nord")
+            -- vim.cmd.colorscheme("nord")
         end,
+    },
+    {
+        "EdenEast/nightfox.nvim",
+        config = function()
+            require("nightfox").setup({})
+            vim.cmd.colorscheme("nordfox")
+        end
     },
 }

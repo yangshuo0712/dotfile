@@ -1,13 +1,17 @@
 local P = {}
 
 P.statusline = {
-  error   = "#ff5555",
-  warn    = "#f1fa8c",
-  hint    = "#8be9fd",
-  info    = "#50fa7b",
-  normal_fg  = "#d8dee9",
-  normal_bg  = "#4c566a",
-  fg_winbar = "#546178",
+  -- Diagnostic colors (can be overridden)
+  error   = "#bf616a",
+  warn    = "#ebcb8b",
+  hint    = "#88c0d0",
+  info    = "#a3be8c",
+  -- Optional overrides: set to nil to follow theme
+  -- normal_bg  = "#4c566a",
+  -- normal_fg  = "#dfdee9",
+  normal_bg  = nil,
+  normal_fg  = nil,
+  fg_winbar  = nil,
 }
 
 P.theme = {}

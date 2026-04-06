@@ -106,7 +106,7 @@ return {
                     max_number = math.huge,
                     -- Whether to show preview of file/directory under cursor
                     preview = false,
-                    width_focus = 25,
+                    width_focus = 50,
                     width_nofocus = 15,
                     width_preview = 25,
                 },
@@ -122,6 +122,7 @@ return {
                     end)
 
                     MiniFiles.set_target_window(new_target)
+                    MiniFiles.go_in()
 
                     -- This intentionally doesn't act on file under cursor in favor of
                     -- explicit "go in" action (`l` / `L`). To immediately open file,
@@ -231,46 +232,46 @@ return {
                     MiniFiles.open()
                 end
             end, { desc = "Open MiniFiles" })
-            vim.keymap.set("n", "<leader>ff", "<Cmd>Pick files<Enter>", { noremap = true, silent = true })
-            vim.keymap.set("n", "<leader>,", "<Cmd>Pick buffers<Enter>", { noremap = true, silent = true })
-            vim.keymap.set("n", "<leader>fh", "<Cmd>Pick help<Enter>", { noremap = true, silent = true })
-            vim.keymap.set("n", "<leader>.", function()
-                MiniExtra.pickers.oldfiles({ current_dir = false, preserve_order = false })
-            end, { noremap = true, silent = true })
-            vim.keymap.set("n", "<leader>/", function()
-                MiniPick.builtin.grep_live()
-            end, { noremap = true, silent = true })
-            vim.keymap.set("n", "<leader>ss", function()
-                MiniExtra.pickers.lsp({ scope = "document_symbol" })
-            end, { noremap = true, silent = true })
-            vim.keymap.set("n", "<leader>sS", function()
-                MiniExtra.pickers.lsp({ scope = "workspace_symbol" })
-            end, { noremap = true, silent = true })
-            vim.keymap.set("n", "<leader>df", function()
-                MiniExtra.pickers.lsp({ scope = "declaration" })
-            end, { noremap = true, silent = true })
-            vim.keymap.set("n", "<leader>sd", function()
-                MiniExtra.pickers.diagnostic()
-            end, { noremap = true, silent = true })
-            vim.keymap.set("n", "<leader>sj", function()
-                MiniExtra.pickers.list({ scope = "jump" })
-            end, { noremap = true, silent = true })
-            vim.keymap.set("n", "<leader>sk", function()
-                MiniExtra.pickers.keymaps({ scope = "all" })
-            end, { noremap = true, silent = true })
-            vim.keymap.set("n", "<leader>sD", function()
-                MiniExtra.pickers.diagnostic({ scope = "current" })
-            end, { noremap = true, silent = true })
-            vim.keymap.set("n", "<leader>td", function()
-                MiniExtra.pickers.hipatterns({ scope = "all" })
-            end, { noremap = true, silent = true })
-            vim.keymap.set("n", "<leader>sH", function()
-                MiniExtra.pickers.hl_groups()
-            end, {
-                noremap = true,
-                silent = true,
-                desc = "Search the hl_groups."
-            })
+            -- vim.keymap.set("n", "<leader>ff", "<Cmd>Pick files<Enter>", { noremap = true, silent = true })
+            -- vim.keymap.set("n", "<leader>,", "<Cmd>Pick buffers<Enter>", { noremap = true, silent = true })
+            -- vim.keymap.set("n", "<leader>fh", "<Cmd>Pick help<Enter>", { noremap = true, silent = true })
+            -- vim.keymap.set("n", "<leader>.", function()
+            --     MiniExtra.pickers.oldfiles({ current_dir = false, preserve_order = false })
+            -- end, { noremap = true, silent = true })
+            -- vim.keymap.set("n", "<leader>/", function()
+            --     MiniPick.builtin.grep_live()
+            -- end, { noremap = true, silent = true })
+            -- vim.keymap.set("n", "<leader>ss", function()
+            --     MiniExtra.pickers.lsp({ scope = "document_symbol" })
+            -- end, { noremap = true, silent = true })
+            -- vim.keymap.set("n", "<leader>sS", function()
+            --     MiniExtra.pickers.lsp({ scope = "workspace_symbol" })
+            -- end, { noremap = true, silent = true })
+            -- vim.keymap.set("n", "<leader>df", function()
+            --     MiniExtra.pickers.lsp({ scope = "declaration" })
+            -- end, { noremap = true, silent = true })
+            -- vim.keymap.set("n", "<leader>sd", function()
+            --     MiniExtra.pickers.diagnostic()
+            -- end, { noremap = true, silent = true })
+            -- vim.keymap.set("n", "<leader>sj", function()
+            --     MiniExtra.pickers.list({ scope = "jump" })
+            -- end, { noremap = true, silent = true })
+            -- vim.keymap.set("n", "<leader>sk", function()
+            --     MiniExtra.pickers.keymaps({ scope = "all" })
+            -- end, { noremap = true, silent = true })
+            -- vim.keymap.set("n", "<leader>sD", function()
+            --     MiniExtra.pickers.diagnostic({ scope = "current" })
+            -- end, { noremap = true, silent = true })
+            -- vim.keymap.set("n", "<leader>td", function()
+            --     MiniExtra.pickers.hipatterns({ scope = "all" })
+            -- end, { noremap = true, silent = true })
+            -- vim.keymap.set("n", "<leader>sH", function()
+            --     MiniExtra.pickers.hl_groups()
+            -- end, {
+            --     noremap = true,
+            --     silent = true,
+            --     desc = "Search the hl_groups."
+            -- })
         end,
     },
 }
